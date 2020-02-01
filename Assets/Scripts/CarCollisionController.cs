@@ -1,12 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
+using System;
 
 [RequireComponent(typeof(Collider2D))]
 public class CarCollisionController : MonoBehaviour
 {
     [SerializeField] private CarHealth _carHealth;
 
+    public event Action CarDestroyedAction;
+    public event Action CarDamagedAction;
+    public event Action ReachedEndOfLevelAction;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // check if you collided with the end of the level
+        if(collision.tag == "Finish")
+        {
+            ReachedEndOfLevelAction?.Invoke();
+            return;
+        }
+
+        // check if you collided with an obstacle
         var damageApplier = collision.GetComponent<DamageApplier>();
         if (damageApplier == null)
         {
@@ -17,7 +31,11 @@ public class CarCollisionController : MonoBehaviour
         var carIsDetroyed = _carHealth.ApplyDamageAndTryDestroy(damage);
         if (carIsDetroyed)
         {
-            BroadcastMessage(MessageStrings.CarDestroyed);
+            CarDestroyedAction?.Invoke();
+        }
+        else
+        {
+            CarDamagedAction?.Invoke();
         }
     }
 }
