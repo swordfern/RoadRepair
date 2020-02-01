@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CarHealth : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class CarHealth : MonoBehaviour
         ResetHealth();
     }
 
-    private void ResetHealth()
+    public void ResetHealth()
     {
         _health = _maxHealth;
     }
