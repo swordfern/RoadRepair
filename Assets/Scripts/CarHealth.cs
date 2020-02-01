@@ -21,4 +21,9 @@ public class CarHealth : MonoBehaviour
         _health -= damage;
         return _health <= 0;
     }
+
+    public int GetHealth()
+    {
+        return _health;
+    }
 }
