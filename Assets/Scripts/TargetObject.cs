@@ -1,20 +1,45 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using static MovableTargetPairs;
 
-public class TargetObject : MonoBehaviour
+public class TargetObject : MonoBehaviour, IInputTarget
 {
     [SerializeField] private TargetType _type;
+    [SerializeField] private int _capacity = 1;
+    [SerializeField] private Transform _placedMovableLocator;
+
+    public event Action OnReachedCapacity;
+
     public TargetType TargetType => _type;
 
-    public MovableItem _placedMovable;
+    private List<MovableItem> _placedMovables = new List<MovableItem>();
+    private Transform _locator;
 
-    public bool HasPlacedItem()
+    private void Awake()
     {
-        return _placedMovable != null;
+        _locator = _placedMovableLocator == null ? transform : _placedMovableLocator;
     }
 
-    public void PlaceMovable(MovableItem movableItem)
+    public bool TryPlaceMovable(MovableItem movableItem)
     {
-        _placedMovable = movableItem;
+        if (IsAtCapacity())
+        {
+            return false;
+        }
+
+        _placedMovables.Add(movableItem);
+        movableItem.transform.SetParent(_locator);
+
+        if (IsAtCapacity())
+        {
+            OnReachedCapacity?.Invoke();
+        }
+        return true;
+    }
+
+    private bool IsAtCapacity()
+    {
+        return _placedMovables.Count >= _capacity;
     }
 }
