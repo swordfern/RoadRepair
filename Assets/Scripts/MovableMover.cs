@@ -20,7 +20,7 @@ public class MovableMover : MonoBehaviour
         {
             return;
         }
-
+            
         _dropTimer -= Time.deltaTime;
         if (_dropTimer <= 0)
         {
@@ -28,12 +28,13 @@ public class MovableMover : MonoBehaviour
             SetHeldDamageApplierDisabled(false);
             _heldItem.transform.SetParent(null);
             _heldItem = null;
+
         }
     }
 
     public void PickeupMovable(MovableItem item)
     {
-        if (_heldItem != null)
+        if (_heldItem != null || !item.CanPlace)
         {
             return;
         }
@@ -42,6 +43,9 @@ public class MovableMover : MonoBehaviour
         _heldItem.transform.SetParent(_cachedTransform);
         SetHeldDamageApplierDisabled(true);
         _dropTimer = _timeToDrop;
+
+        //Play audio for picking up item
+        SoundManager.MasterSoundManager.pickUpSource.PlayOneShot(SoundManager.MasterSoundManager.pickUpClip, 0.5f);
     }
 
     public void PlaceMovable(TargetObject targetObject)
@@ -56,7 +60,11 @@ public class MovableMover : MonoBehaviour
             var placedMovable = targetObject.TryPlaceMovable(_heldItem);
             if (placedMovable)
             {
+                _heldItem.Place();
                 _heldItem = null;
+
+                //Play audio for putting down item
+                SoundManager.MasterSoundManager.putDownSource.PlayOneShot(SoundManager.MasterSoundManager.putDownClip, 0.5f);
             }
         }
     }
