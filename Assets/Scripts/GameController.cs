@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private CarCollisionController carCollisionController;
-
+    [SerializeField] private CarMovementBehaviour carMovementBehaviour;
+    [SerializeField] private HUDController hudController;
 
     private GameObject[] mainMenuObjects;
     private GameObject[] damageNotificationObjects;
     private GameObject[] levelEndObjects;
+    private GameObject[] gameplayObjects;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +25,11 @@ public class GameController : MonoBehaviour
         mainMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnMenuVisible");
         damageNotificationObjects = GameObject.FindGameObjectsWithTag("ShowOnDamage");
         levelEndObjects = GameObject.FindGameObjectsWithTag("ShowOnLevelEnd");
+        gameplayObjects = GameObject.FindGameObjectsWithTag("ShowOnGameplay");
 
         HideDamageNotificationObjects();
         HideLevelEndObjects();
+        HideGameplayObjects();
 
         DisplayLevelMenu();
     }
@@ -42,7 +47,9 @@ public class GameController : MonoBehaviour
 
     public void CarCollisionController_CarDamaged()
     {
-        ShowDamageNotificationObjects();
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().pickUpSource.PlayOneShot(GameObject.Find("Main Camera").GetComponent<SoundManager>().collisionClip, 0.30f);
+
+        hudController.UpdateHealthSlider(carCollisionController.GetHealth(), carCollisionController.GetMaxHealth());
     }
 
     public void CarCollisionController_ReachedEndOfLevel()
@@ -55,7 +62,9 @@ public class GameController : MonoBehaviour
     public void OnStartButtonClick()
     {
         HideLevelMenu();
-        //display countdown graphic?
+        ShowGameplayObjects();
+        hudController.CreateHealthSlider(carCollisionController.GetMaxHealth());
+        carMovementBehaviour.SetGameStarted();
 
         GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginLevelMusic();
 
@@ -94,16 +103,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void ShowDamageNotificationObjects()
-    {
-        foreach(GameObject g in damageNotificationObjects)
-        {
-            g.SetActive(true);
-        }
-
-        StartCoroutine(HideAfterSeconds(1, damageNotificationObjects));
-    }
-
     private void HideDamageNotificationObjects()
     {
         foreach (GameObject g in damageNotificationObjects)
@@ -123,6 +122,22 @@ public class GameController : MonoBehaviour
     private void HideLevelEndObjects()
     {
         foreach(GameObject g in levelEndObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    private void ShowGameplayObjects()
+    {
+        foreach (GameObject g in gameplayObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    private void HideGameplayObjects()
+    {
+        foreach (GameObject g in gameplayObjects)
         {
             g.SetActive(false);
         }
