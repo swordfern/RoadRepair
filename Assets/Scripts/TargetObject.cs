@@ -1,20 +1,26 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using static MovableTargetPairs;
 
-public class TargetObject : MonoBehaviour
+public class TargetObject : MonoBehaviour, IInputTarget
 {
     [SerializeField] private TargetType _type;
+    [SerializeField] private int _capacity = 1;
+
     public TargetType TargetType => _type;
 
-    public MovableItem _placedMovable;
+    private List<MovableItem> _placedMovables = new List<MovableItem>();
 
-    public bool HasPlacedItem()
+    public bool IsAtCapacity()
     {
-        return _placedMovable != null;
+        return _placedMovables.Count >= _capacity;
     }
 
     public void PlaceMovable(MovableItem movableItem)
     {
-        _placedMovable = movableItem;
+        if (!IsAtCapacity())
+        {
+            _placedMovables.Add(movableItem);
+        }
     }
 }
