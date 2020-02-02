@@ -9,14 +9,18 @@ public class MovableTargetPairs : ScriptableObject
     {
         Invalid,
         Cone,
-        PotholeFiller
+        PotholeFiller,
+        Cat,
+        ConstructionWorker
     }
 
     public enum TargetType
     {
         Invalid,
         ConeTarget,
-        Pothole
+        Pothole,
+        CatKennel,
+        YeildSign
     }
 
     [Serializable]
