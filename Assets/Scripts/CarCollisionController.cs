@@ -21,7 +21,7 @@ public class CarCollisionController : MonoBehaviour
 
         // check if you collided with an obstacle
         var damageApplier = collision.GetComponent<DamageApplier>();
-        if (damageApplier == null)
+        if (damageApplier == null || damageApplier.IsDisabled)
         {
             return;
         }
