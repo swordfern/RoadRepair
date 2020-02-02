@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3652991500372880404, guid: 772932dfec3b6094aa917b38a599c47f,
         type: 3}
       propertyPath: m_Name
-      value: Kitty.moveable
+      value: Kitty.moveable Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
         type: 3}
@@ -21,6 +21,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.23339868
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 3652991500372880407, guid: 772932dfec3b6094aa917b38a599c47f,
         type: 3}
@@ -76,6 +86,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652991500372880409, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c196df6f984b474196997ad889bc6df,
+        type: 3}
+    - target: {fileID: 3652991500372880411, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: _type
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 772932dfec3b6094aa917b38a599c47f, type: 3}

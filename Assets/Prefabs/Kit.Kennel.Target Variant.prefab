@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6330308476542317155
 Transform:
   m_ObjectHideFlags: 0
@@ -167,6 +167,11 @@ PrefabInstance:
     - target: {fileID: 1328242946963117417, guid: 6cfdbba2f6a95194390438401e3dae93,
         type: 3}
       propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328242946963117418, guid: 6cfdbba2f6a95194390438401e3dae93,
+        type: 3}
+      propertyPath: _parentsForPlacedMovables.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1328242946963117418, guid: 6cfdbba2f6a95194390438401e3dae93,
