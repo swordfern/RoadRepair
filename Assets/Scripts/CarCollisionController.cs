@@ -40,4 +40,14 @@ public class CarCollisionController : MonoBehaviour
             CarDamagedAction?.Invoke();
         }
     }
+
+    public int GetHealth()
+    {
+        return _carHealth.GetHealth();
+    }
+
+    public int GetMaxHealth()
+    {
+        return _carHealth.GetMaxHealth();
+    }
 }

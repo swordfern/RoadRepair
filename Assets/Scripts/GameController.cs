@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private CarCollisionController carCollisionController;
+    [SerializeField] private Slider healthBarSlider;
+    [SerializeField] private Fill healthBarFill;
     [SerializeField] private SoundManager soundManager;
 
     private GameObject[] mainMenuObjects;
     private GameObject[] damageNotificationObjects;
     private GameObject[] levelEndObjects;
+    private GameObject[] gameplayObjects;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +26,11 @@ public class GameController : MonoBehaviour
         mainMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnMenuVisible");
         damageNotificationObjects = GameObject.FindGameObjectsWithTag("ShowOnDamage");
         levelEndObjects = GameObject.FindGameObjectsWithTag("ShowOnLevelEnd");
+        gameplayObjects = GameObject.FindGameObjectsWithTag("ShowOnGameplay");
 
         HideDamageNotificationObjects();
         HideLevelEndObjects();
+        HideGameplayObjects();
 
         DisplayLevelMenu();
     }
@@ -42,7 +48,8 @@ public class GameController : MonoBehaviour
 
     public void CarCollisionController_CarDamaged()
     {
-        ShowDamageNotificationObjects();
+        updateHealthSlider(carCollisionController.GetHealth(), carCollisionController.GetMaxHealth());
+        //ShowDamageNotificationObjects();
     }
 
     public void CarCollisionController_ReachedEndOfLevel()
@@ -55,6 +62,7 @@ public class GameController : MonoBehaviour
     public void OnStartButtonClick()
     {
         HideLevelMenu();
+        ShowGameplayObjects();
         //display countdown graphic?
 
         soundManager.BeginLevelMusic();
@@ -76,6 +84,12 @@ public class GameController : MonoBehaviour
         Application.Quit();
     }
 
+    private void updateHealthSlider(int currHealth, int maxHealth)
+    {
+        int x = (int)100 * currHealth / maxHealth;
+        healthBarSlider.value = (int)100 * currHealth / maxHealth;
+    }
+
     private void DisplayLevelMenu()
     {
         int count = 0;
@@ -92,16 +106,6 @@ public class GameController : MonoBehaviour
         {
             g.SetActive(false);
         }
-    }
-
-    private void ShowDamageNotificationObjects()
-    {
-        foreach(GameObject g in damageNotificationObjects)
-        {
-            g.SetActive(true);
-        }
-
-        StartCoroutine(HideAfterSeconds(1, damageNotificationObjects));
     }
 
     private void HideDamageNotificationObjects()
@@ -123,6 +127,22 @@ public class GameController : MonoBehaviour
     private void HideLevelEndObjects()
     {
         foreach(GameObject g in levelEndObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    private void ShowGameplayObjects()
+    {
+        foreach (GameObject g in gameplayObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    private void HideGameplayObjects()
+    {
+        foreach (GameObject g in gameplayObjects)
         {
             g.SetActive(false);
         }
