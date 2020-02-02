@@ -90,6 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040094837088737610, guid: 6c9d0fd13735c064895293793e242278,
         type: 3}
+      propertyPath: _parentsForPlacedMovables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040094837088737610, guid: 6c9d0fd13735c064895293793e242278,
+        type: 3}
       propertyPath: _type
       value: 2
       objectReference: {fileID: 0}
@@ -103,10 +108,15 @@ PrefabInstance:
       propertyPath: _parentToDisappear
       value: 
       objectReference: {fileID: 1600831159524475364}
+    - target: {fileID: 3040094837088737610, guid: 6c9d0fd13735c064895293793e242278,
+        type: 3}
+      propertyPath: _parentsForPlacedMovables.Array.data[0]
+      value: 
+      objectReference: {fileID: 1600831160472100141}
     - target: {fileID: 3040094837088737623, guid: 6c9d0fd13735c064895293793e242278,
         type: 3}
       propertyPath: m_Name
-      value: Pothole.target
+      value: Pothole.target Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 345268780, guid: 6c9d0fd13735c064895293793e242278, type: 3}
@@ -121,6 +131,12 @@ GameObject:
 --- !u!4 &1600831159524475387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3040094837088737608, guid: 6c9d0fd13735c064895293793e242278,
+    type: 3}
+  m_PrefabInstance: {fileID: 4325669306822629555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1600831160472100141 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3040094836442645918, guid: 6c9d0fd13735c064895293793e242278,
     type: 3}
   m_PrefabInstance: {fileID: 4325669306822629555}
   m_PrefabAsset: {fileID: 0}

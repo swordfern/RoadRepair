@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using static MovableTargetPairs;
+using Random = UnityEngine.Random;
 
 public class TargetObject : MonoBehaviour, IInputTarget
 {
     [SerializeField] private TargetType _type;
     [SerializeField] private int _capacity = 1;
-    [SerializeField] private Transform _placedMovableLocator;
+    [SerializeField] private Transform[] _parentsForPlacedMovables;
     [SerializeField] private bool _disappearWhenAtCapacity;
     [SerializeField] private bool _showOtherObjectWhenAtCapacity;
     [SerializeField] private GameObject _parentToDisappear;
@@ -18,11 +19,13 @@ public class TargetObject : MonoBehaviour, IInputTarget
     public TargetType TargetType => _type;
 
     private List<MovableItem> _placedMovables = new List<MovableItem>();
-    private Transform _locator;
+    private Transform[] _movableLocators;
 
     private void Awake()
     {
-        _locator = _placedMovableLocator == null ? transform : _placedMovableLocator;
+        _movableLocators = _parentsForPlacedMovables == null || _parentsForPlacedMovables.Length == 0 
+            ? new []{ transform } 
+            : _parentsForPlacedMovables;
     }
 
     public bool TryPlaceMovable(MovableItem movableItem)
@@ -33,7 +36,7 @@ public class TargetObject : MonoBehaviour, IInputTarget
         }
 
         _placedMovables.Add(movableItem);
-        movableItem.transform.SetParent(_locator, false);
+        PlaceMovable(movableItem);
 
         if (IsAtCapacity())
         {
@@ -41,6 +44,12 @@ public class TargetObject : MonoBehaviour, IInputTarget
             OnReachedCapacity?.Invoke();
         }
         return true;
+    }
+
+    private void PlaceMovable(MovableItem movableItem)
+    {
+        var slot = Random.Range(0, _movableLocators.Length);
+        movableItem.transform.SetParent(_movableLocators[slot], false);
     }
 
     private void HandleReachedCapacity()
