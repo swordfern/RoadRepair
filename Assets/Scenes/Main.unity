@@ -196,6 +196,36 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 8204382122365280568}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &984789110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8204382122496564626, guid: 65fb020401475b94394c7d1f580c7544,
+    type: 3}
+  m_PrefabInstance: {fileID: 8204382122365280568}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &984789111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984789110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2468876787b2147a35e7f308815150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carSource: {fileID: 0}
+  catSource: {fileID: 0}
+  pickUpSource: {fileID: 0}
+  putDownSource: {fileID: 0}
+  collisionSource: {fileID: 0}
+  musicSource: {fileID: 0}
+  carClip: {fileID: 8300000, guid: 9a5e7fdd55e903f4284615a90201f56a, type: 3}
+  catClip: {fileID: 8300000, guid: b579525c1ba804a48bb070a0c9b37139, type: 3}
+  pickUpClip: {fileID: 8300000, guid: 91aedd59ba82f4b4b8b04d8db95482a3, type: 3}
+  putDownClip: {fileID: 8300000, guid: 3e01e3aca854cc94f93b6c0e65a0145f, type: 3}
+  collisionClip: {fileID: 8300000, guid: 6d7e07e1c89a9f2479546a61570f7ee1, type: 3}
+  musicClip: {fileID: 8300000, guid: 6a796b959cf5d8e439502f0266fecd36, type: 3}
 --- !u!1001 &2091052140
 PrefabInstance:
   m_ObjectHideFlags: 0

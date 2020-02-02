@@ -18,6 +18,10 @@ public class MovableMover : MonoBehaviour
         {
             _heldItem = item;
             _heldItem.transform.SetParent(_cachedTransform);
+
+            //Play audio for picking up item
+            //gameObject.GetComponent<SoundManager>().pickUpSource.PlayOneShot(gameObject.GetComponent<SoundManager>().pickUpClip);
+            SoundManager.MasterSoundManager.pickUpSource.PlayOneShot(SoundManager.MasterSoundManager.pickUpClip);
         }
     }
 
