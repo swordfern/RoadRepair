@@ -19,3 +19,7 @@ MonoBehaviour:
     Target: 1
   - Movable: 2
     Target: 2
+  - Movable: 3
+    Target: 3
+  - Movable: 4
+    Target: 4
