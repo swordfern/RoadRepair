@@ -34257,15 +34257,19 @@ MonoBehaviour:
   pickUpSource: {fileID: 0}
   putDownSource: {fileID: 0}
   collisionSource: {fileID: 0}
+  destroySource: {fileID: 0}
   personSource: {fileID: 0}
   musicSource: {fileID: 0}
+  menuMusicSource: {fileID: 0}
   carClip: {fileID: 8300000, guid: 709d5a43e4f58b7458df56290f6d3fbf, type: 3}
   catClip: {fileID: 8300000, guid: f828a3e7dc4e0094990727b0505dc1f5, type: 3}
   pickUpClip: {fileID: 8300000, guid: d4db9d7f149bd9742a2569b892abdc8f, type: 3}
   putDownClip: {fileID: 8300000, guid: f6f156c14179403439ca0a43708c27df, type: 3}
   collisionClip: {fileID: 8300000, guid: c7f76f035d51de04a90dac6096ba6b8e, type: 3}
+  destroyClip: {fileID: 0}
   personClip: {fileID: 8300000, guid: fde735f6a51b898449af883b009490d8, type: 3}
   musicClip: {fileID: 8300000, guid: 1f3451841f5d4c149855012443ddd21d, type: 3}
+  menuMusicClip: {fileID: 0}
 --- !u!1001 &1141119668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34567,6 +34571,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnBackToMainMenuClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777015622495429756, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1396878871}
+    - target: {fileID: 6777015622495429756, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRestartButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777015622495429756, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511576702736790805, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1396878871}
+    - target: {fileID: 8511576702736790805, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnExitButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511576702736790805, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 848f0f3ce195f894f8e72d6597f4a0ad, type: 3}
