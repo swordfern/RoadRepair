@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System;
 
 [RequireComponent(typeof(Collider2D))]
@@ -21,7 +22,7 @@ public class CarCollisionController : MonoBehaviour
 
         // check if you collided with an obstacle
         var damageApplier = collision.GetComponent<DamageApplier>();
-        if (damageApplier == null || damageApplier.IsDisabled)
+        if (damageApplier == null)
         {
             return;
         }
