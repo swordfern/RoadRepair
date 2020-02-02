@@ -25,7 +25,7 @@ public class MovableMover : MonoBehaviour
         if (_dropTimer <= 0)
         {
             // Reparent to scene root
-            SetHeldDamageApplierDisabled(false);
+            SetHeldItemBehaviorsDisabled(false);
             _heldItem.transform.SetParent(null);
             _heldItem = null;
 
@@ -41,7 +41,7 @@ public class MovableMover : MonoBehaviour
 
         _heldItem = item;
         _heldItem.transform.SetParent(_cachedTransform);
-        SetHeldDamageApplierDisabled(true);
+        SetHeldItemBehaviorsDisabled(true);
         _dropTimer = _timeToDrop;
 
         //Play audio for picking up item
@@ -69,17 +69,18 @@ public class MovableMover : MonoBehaviour
         }
     }
 
-    private void SetHeldDamageApplierDisabled(bool isDisabled)
+    private void SetHeldItemBehaviorsDisabled(bool isDisabled)
     {
         if (_heldItem == null)
         {
             return;
         }
 
-        var damageApplier = _heldItem.GetComponent<DamageApplier>();
-        if (damageApplier != null)
+        var temporarilyDisableables = _heldItem.GetComponents<ITemporarilyDisableable>();
+        for (int i = 0; i < temporarilyDisableables.Length; i++)
         {
-            damageApplier.SetTemporarilyDisabled(isDisabled);
+            var disableable = temporarilyDisableables[i];
+            disableable.SetTemporarilyDisabled(isDisabled);
         }
     }
 }
