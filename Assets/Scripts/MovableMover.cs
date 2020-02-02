@@ -33,7 +33,7 @@ public class MovableMover : MonoBehaviour
 
     public void PickeupMovable(MovableItem item)
     {
-        if (_heldItem != null)
+        if (_heldItem != null || !item.CanPlace)
         {
             return;
         }
@@ -56,6 +56,7 @@ public class MovableMover : MonoBehaviour
             var placedMovable = targetObject.TryPlaceMovable(_heldItem);
             if (placedMovable)
             {
+                _heldItem.Place();
                 _heldItem = null;
             }
         }
