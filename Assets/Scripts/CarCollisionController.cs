@@ -27,7 +27,7 @@ public class CarCollisionController : MonoBehaviour
         }
 
         //Play audio for picking up item
-        SoundManager.MasterSoundManager.collisionSource.PlayOneShot(SoundManager.MasterSoundManager.collisionClip, 0.30f);
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().pickUpSource.PlayOneShot(GameObject.Find("Main Camera").GetComponent<SoundManager>().collisionClip, 0.30f);
 
         var damage = damageApplier.DamageAmount;
         var carIsDetroyed = _carHealth.ApplyDamageAndTryDestroy(damage);

@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource pickUpSource;
     public AudioSource putDownSource;
     public AudioSource collisionSource;
+    public AudioSource personSource;
     public AudioSource musicSource;
 
     public AudioClip carClip;
@@ -16,18 +17,19 @@ public class SoundManager : MonoBehaviour
     public AudioClip pickUpClip;
     public AudioClip putDownClip;
     public AudioClip collisionClip;
+    public AudioClip personClip;
     public AudioClip musicClip;
 
     //creates static SoundManager for singleton
-    public static SoundManager MasterSoundManager;
+    //public static SoundManager MasterSoundManager;
 
     void Start()
     {
         //checks to see if the singleton exists
-        if (MasterSoundManager == null)
+        /*if (MasterSoundManager == null)
         {
             MasterSoundManager = this;
-        }
+        }*/
 
         carSource = gameObject.AddComponent<AudioSource>();
         catSource = gameObject.AddComponent<AudioSource>();
