@@ -144,6 +144,16 @@ PrefabInstance:
       propertyPath: _type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3040094837088737610, guid: 6c9d0fd13735c064895293793e242278,
+        type: 3}
+      propertyPath: _disappearWhenAtCapacity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040094837088737610, guid: 6c9d0fd13735c064895293793e242278,
+        type: 3}
+      propertyPath: _parentToDisappear
+      value: 
+      objectReference: {fileID: 1600831159524475364}
     - target: {fileID: 3040094837088737623, guid: 6c9d0fd13735c064895293793e242278,
         type: 3}
       propertyPath: m_Name
