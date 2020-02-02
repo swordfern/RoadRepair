@@ -5,12 +5,12 @@ public class DamageApplier : MonoBehaviour
     [SerializeField] private int _damageAmount;
     [SerializeField] private TargetObject _target;
 
-    private bool _isDisabled;
+    private bool _isPermanentlyDisabled;
+    private bool _isTemporarilyDisabled;
 
-    public int DamageAmount => _isDisabled ? 0 : _damageAmount;
-    public bool IsDisabled => _isDisabled;
-
-
+    public int DamageAmount => IsDisabled ? 0 : _damageAmount;
+    public bool IsDisabled => _isPermanentlyDisabled || _isTemporarilyDisabled;
+    
     private void Awake()
     {
         if (_target != null)
@@ -21,6 +21,11 @@ public class DamageApplier : MonoBehaviour
 
     private void HandleTargetReachedCapacity()
     {
-        _isDisabled = true;
+        _isPermanentlyDisabled = true;
+    }
+
+    public void SetTemporarilyDisabled(bool isDisabled)
+    {
+        _isTemporarilyDisabled = isDisabled;
     }
 }

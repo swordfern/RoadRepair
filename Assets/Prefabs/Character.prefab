@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movableTargetPairs: {fileID: 11400000, guid: 9f7a52fa840d5af458b40dc69052a935,
     type: 2}
+  _timeToDrop: 3
 --- !u!114 &686162169800955411
 MonoBehaviour:
   m_ObjectHideFlags: 0

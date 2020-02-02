@@ -8,6 +8,8 @@ public class TargetObject : MonoBehaviour, IInputTarget
     [SerializeField] private TargetType _type;
     [SerializeField] private int _capacity = 1;
     [SerializeField] private Transform _placedMovableLocator;
+    [SerializeField] private bool _disappearWhenAtCapacity;
+    [SerializeField] private GameObject _parentToDisappear;
 
     public event Action OnReachedCapacity;
 
@@ -34,6 +36,10 @@ public class TargetObject : MonoBehaviour, IInputTarget
         if (IsAtCapacity())
         {
             OnReachedCapacity?.Invoke();
+            if (_disappearWhenAtCapacity)
+            {
+                _parentToDisappear.SetActive(false);
+            }
         }
         return true;
     }
