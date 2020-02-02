@@ -98,7 +98,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &1829724100825998139
@@ -111,7 +111,17 @@ PrefabInstance:
     - target: {fileID: 3652991500372880404, guid: 772932dfec3b6094aa917b38a599c47f,
         type: 3}
       propertyPath: m_Name
-      value: worker.move.dmg
+      value: worker.move.dmg Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 3652991500372880407, guid: 772932dfec3b6094aa917b38a599c47f,
         type: 3}
@@ -168,6 +178,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3652991500372880409, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 37728bdcfc42b5b459ffabacaa03e9c1,
+        type: 3}
     - target: {fileID: 3652991500372880411, guid: 772932dfec3b6094aa917b38a599c47f,
         type: 3}
       propertyPath: _type
