@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private CarCollisionController carCollisionController;
     [SerializeField] private Slider healthBarSlider;
     [SerializeField] private Fill healthBarFill;
-    [SerializeField] private SoundManager soundManager;
 
     private GameObject[] mainMenuObjects;
     private GameObject[] damageNotificationObjects;
@@ -65,7 +64,7 @@ public class GameController : MonoBehaviour
         ShowGameplayObjects();
         //display countdown graphic?
 
-        soundManager.BeginLevelMusic();
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginLevelMusic();
 
         Time.timeScale = 1.0f;
     }

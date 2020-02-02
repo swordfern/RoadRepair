@@ -259,6 +259,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fea6dac041d46ef4e9eda4bb6c08b3cf, type: 3}
+--- !u!114 &141661031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4087849988506269679, guid: fea6dac041d46ef4e9eda4bb6c08b3cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 141661030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ff1624eef526d4ab78005e5a930897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &389289782 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8204382122496564628, guid: 65fb020401475b94394c7d1f580c7544,
@@ -271,7 +283,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8204382122365280568}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &984789111
+--- !u!114 &984789112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,24 +301,12 @@ MonoBehaviour:
   putDownSource: {fileID: 0}
   collisionSource: {fileID: 0}
   musicSource: {fileID: 0}
-  carClip: {fileID: 0}
-  catClip: {fileID: 0}
-  pickUpClip: {fileID: 0}
-  putDownClip: {fileID: 0}
-  collisionClip: {fileID: 0}
-  musicClip: {fileID: 0}
---- !u!114 &984789112 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 984789111, guid: 65fb020401475b94394c7d1f580c7544,
-    type: 3}
-  m_PrefabInstance: {fileID: 8204382122365280568}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984789110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2468876787b2147a35e7f308815150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  carClip: {fileID: 8300000, guid: 709d5a43e4f58b7458df56290f6d3fbf, type: 3}
+  catClip: {fileID: 8300000, guid: f828a3e7dc4e0094990727b0505dc1f5, type: 3}
+  pickUpClip: {fileID: 8300000, guid: d4db9d7f149bd9742a2569b892abdc8f, type: 3}
+  putDownClip: {fileID: 8300000, guid: f6f156c14179403439ca0a43708c27df, type: 3}
+  collisionClip: {fileID: 8300000, guid: c7f76f035d51de04a90dac6096ba6b8e, type: 3}
+  musicClip: {fileID: 8300000, guid: 1f3451841f5d4c149855012443ddd21d, type: 3}
 --- !u!1001 &1141119668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +316,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 51720123098926308, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 51720123098926308, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1396878871}
@@ -323,6 +328,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnStartButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 51720123098926308, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 51720123098926308, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 51720123098926308, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 141661031}
+    - target: {fileID: 51720123098926308, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetGameStarted
+      objectReference: {fileID: 0}
+    - target: {fileID: 51720123098926308, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 51720123806950965, guid: 848f0f3ce195f894f8e72d6597f4a0ad,
         type: 3}
@@ -612,7 +642,7 @@ PrefabInstance:
         type: 3}
       propertyPath: soundManager
       value: 
-      objectReference: {fileID: 984789112}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c03ab1468105ee43bd4297cdaf69a08, type: 3}
 --- !u!114 &1396878871 stripped
@@ -1138,20 +1168,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1083239308673376251, guid: 65fb020401475b94394c7d1f580c7544,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8204382122496564626, guid: 65fb020401475b94394c7d1f580c7544,
         type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 8204382122496564627, guid: 65fb020401475b94394c7d1f580c7544,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8204382122496564628, guid: 65fb020401475b94394c7d1f580c7544,
-        type: 3}
-      propertyPath: orthographic size
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8204382122496564629, guid: 65fb020401475b94394c7d1f580c7544,
         type: 3}
@@ -1208,5 +1233,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1083239308673376251, guid: 65fb020401475b94394c7d1f580c7544, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65fb020401475b94394c7d1f580c7544, type: 3}
