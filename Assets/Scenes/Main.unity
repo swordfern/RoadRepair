@@ -203,6 +203,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1019232351, guid: 34a03e64cd8f2224d88a2a9eea42457d, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 389289782}
     - target: {fileID: 686162169800955410, guid: 34a03e64cd8f2224d88a2a9eea42457d,
         type: 3}
       propertyPath: m_Name
@@ -558,11 +562,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 8204382122496564628, guid: 65fb020401475b94394c7d1f580c7544,
-        type: 3}
-      propertyPath: orthographic size
-      value: 1.12
-      objectReference: {fileID: 0}
     - target: {fileID: 8204382122496564629, guid: 65fb020401475b94394c7d1f580c7544,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -617,11 +616,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8204382122496564630, guid: 65fb020401475b94394c7d1f580c7544,
-        type: 3}
-      propertyPath: _velocityPerSecond.y
-      value: -0.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65fb020401475b94394c7d1f580c7544, type: 3}
