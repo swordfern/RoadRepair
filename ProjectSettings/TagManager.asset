@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ShowOnLevelEnd
   - ShowOnDamage
+  - ShowOnMenuVisible
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 using System;
 
 [RequireComponent(typeof(Collider2D))]
