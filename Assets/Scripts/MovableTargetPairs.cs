@@ -7,12 +7,14 @@ public class MovableTargetPairs : ScriptableObject
 {
     public enum MovableType
     {
-        Invalid
+        Invalid,
+        Cone
     }
 
     public enum TargetType
     {
-        Invalid
+        Invalid,
+        ConeTarget
     }
 
     [Serializable]
