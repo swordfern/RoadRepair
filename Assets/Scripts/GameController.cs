@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private CarCollisionController carCollisionController;
+    [SerializeField] private CarMovementBehaviour carMovementBehaviour;
     [SerializeField] private HUDController hudController;
 
     private GameObject[] mainMenuObjects;
@@ -63,6 +64,7 @@ public class GameController : MonoBehaviour
         HideLevelMenu();
         ShowGameplayObjects();
         hudController.CreateHealthSlider(carCollisionController.GetMaxHealth());
+        carMovementBehaviour.SetGameStarted();
 
         GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginLevelMusic();
 

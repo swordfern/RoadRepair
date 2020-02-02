@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carCollisionController: {fileID: 0}
+  carMovementBehaviour: {fileID: 0}
   hudController: {fileID: 0}
