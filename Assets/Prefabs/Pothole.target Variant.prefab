@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!61 &4835028700751580332
+--- !u!61 &4325669306612152991
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,7 +13,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010336697, y: 0.090471596}
+  m_Offset: {x: -0.0020413995, y: 0.08632398}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -24,7 +24,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4377452, y: 0.17420805}
+  m_Size: {x: 0.49581224, y: 0.18250322}
   m_EdgeRadius: 0
 --- !u!212 &6931938407802650831
 SpriteRenderer:
@@ -87,12 +87,12 @@ PrefabInstance:
     - target: {fileID: 3040094837088737608, guid: 6c9d0fd13735c064895293793e242278,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.556
+      value: 0.133
       objectReference: {fileID: 0}
     - target: {fileID: 3040094837088737608, guid: 6c9d0fd13735c064895293793e242278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.414
+      value: -2.504
       objectReference: {fileID: 0}
     - target: {fileID: 3040094837088737608, guid: 6c9d0fd13735c064895293793e242278,
         type: 3}
@@ -149,7 +149,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pothole.target
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 345268780, guid: 6c9d0fd13735c064895293793e242278, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c9d0fd13735c064895293793e242278, type: 3}
 --- !u!1 &1600831159524475364 stripped
 GameObject:
