@@ -50,6 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocityPerSecond: {x: 0, y: -0.55, z: 0}
+  _yVelocity: -0.55
+  _amplitude: 1
+  _frequency: 0.01
+  _spread: 0.01
 --- !u!114 &1159155477188425268
 MonoBehaviour:
   m_ObjectHideFlags: 0
