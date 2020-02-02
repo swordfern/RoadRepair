@@ -146,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 4775098570654058908, guid: b015b65cc80238f45b63967f60589ab9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4775098570654058908, guid: b015b65cc80238f45b63967f60589ab9,
         type: 3}
@@ -283,6 +283,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2468876787b2147a35e7f308815150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carSource: {fileID: 0}
+  catSource: {fileID: 0}
+  pickUpSource: {fileID: 0}
+  putDownSource: {fileID: 0}
+  collisionSource: {fileID: 0}
+  musicSource: {fileID: 0}
+  carClip: {fileID: 0}
+  catClip: {fileID: 0}
+  pickUpClip: {fileID: 0}
+  putDownClip: {fileID: 0}
+  collisionClip: {fileID: 0}
+  musicClip: {fileID: 0}
 --- !u!1001 &2091052140
 PrefabInstance:
   m_ObjectHideFlags: 0
