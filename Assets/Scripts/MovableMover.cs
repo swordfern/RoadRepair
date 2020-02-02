@@ -21,20 +21,20 @@ public class MovableMover : MonoBehaviour
         }
     }
 
-    public bool TryPlaceMovable(TargetObject targetObject)
+    public void PlaceMovable(TargetObject targetObject)
     {
-        if (_heldItem == null || targetObject.IsAtCapacity())
+        if (_heldItem == null)
         {
-            return false;
+            return;
         }
 
         if (_movableTargetPairs.IsMatch(_heldItem.MovableType, targetObject.TargetType))
         {
-            targetObject.PlaceMovable(_heldItem);
-            _heldItem = null;
-            return true;
+            var placedMovable = targetObject.TryPlaceMovable(_heldItem);
+            if (placedMovable)
+            {
+                _heldItem = null;
+            }
         }
-
-        return false;
     }
 }

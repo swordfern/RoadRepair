@@ -30,6 +30,6 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void HandleTargetFound(TargetObject target)
     {
-        _mover.TryPlaceMovable(target);
+        _mover.PlaceMovable(target);
     }
 }
