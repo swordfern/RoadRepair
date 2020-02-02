@@ -3,22 +3,45 @@
 public class MovableMover : MonoBehaviour
 {
     [SerializeField] private MovableTargetPairs _movableTargetPairs;
+    [SerializeField] private float _timeToDrop;
 
     private Transform _cachedTransform;
     private MovableItem _heldItem;
+    private float _dropTimer;
 
     private void Awake()
     {
         _cachedTransform = transform;
     }
 
-    public void PickeupMovable(MovableItem item)
+    private void Update()
     {
         if (_heldItem == null)
         {
-            _heldItem = item;
-            _heldItem.transform.SetParent(_cachedTransform);
+            return;
         }
+
+        _dropTimer -= Time.deltaTime;
+        if (_dropTimer <= 0)
+        {
+            // Reparent to scene root
+            SetHeldDamageApplierDisabled(false);
+            _heldItem.transform.SetParent(null);
+            _heldItem = null;
+        }
+    }
+
+    public void PickeupMovable(MovableItem item)
+    {
+        if (_heldItem != null)
+        {
+            return;
+        }
+
+        _heldItem = item;
+        _heldItem.transform.SetParent(_cachedTransform);
+        SetHeldDamageApplierDisabled(true);
+        _dropTimer = _timeToDrop;
     }
 
     public void PlaceMovable(TargetObject targetObject)
@@ -35,6 +58,20 @@ public class MovableMover : MonoBehaviour
             {
                 _heldItem = null;
             }
+        }
+    }
+
+    private void SetHeldDamageApplierDisabled(bool isDisabled)
+    {
+        if (_heldItem == null)
+        {
+            return;
+        }
+
+        var damageApplier = _heldItem.GetComponent<DamageApplier>();
+        if (damageApplier != null)
+        {
+            damageApplier.SetTemporarilyDisabled(isDisabled);
         }
     }
 }

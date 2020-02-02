@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 686162169800955437}
   - component: {fileID: 686162169800955436}
   - component: {fileID: 686162169800955411}
+  - component: {fileID: 1019232351}
+  - component: {fileID: 1019232353}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -46,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movableTargetPairs: {fileID: 11400000, guid: 9f7a52fa840d5af458b40dc69052a935,
     type: 2}
+  _timeToDrop: 3
 --- !u!114 &686162169800955411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,3 +63,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _zPosition: 0
+--- !u!114 &1019232351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686162169800955410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77de763c49f3cda43aa4436800d1c6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
+  _primaryKey: 323
+--- !u!114 &1019232353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686162169800955410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d682b7e5241b243ae348dd49d1ef8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputController: {fileID: 1019232351}
+  _mover: {fileID: 686162169800955436}
