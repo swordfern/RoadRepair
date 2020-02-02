@@ -9,7 +9,9 @@ public class TargetObject : MonoBehaviour, IInputTarget
     [SerializeField] private int _capacity = 1;
     [SerializeField] private Transform _placedMovableLocator;
     [SerializeField] private bool _disappearWhenAtCapacity;
+    [SerializeField] private bool _showOtherObjectWhenAtCapacity;
     [SerializeField] private GameObject _parentToDisappear;
+    [SerializeField] private GameObject _otherObjectToShow;
 
     public event Action OnReachedCapacity;
 
@@ -31,17 +33,27 @@ public class TargetObject : MonoBehaviour, IInputTarget
         }
 
         _placedMovables.Add(movableItem);
-        movableItem.transform.SetParent(_locator);
+        movableItem.transform.SetParent(_locator, false);
 
         if (IsAtCapacity())
         {
+            HandleReachedCapacity();
             OnReachedCapacity?.Invoke();
-            if (_disappearWhenAtCapacity)
-            {
-                _parentToDisappear.SetActive(false);
-            }
         }
         return true;
+    }
+
+    private void HandleReachedCapacity()
+    {
+        if (_showOtherObjectWhenAtCapacity)
+        {
+            _otherObjectToShow.SetActive(true);
+        }
+
+        if (_disappearWhenAtCapacity)
+        {
+            _parentToDisappear.SetActive(false);
+        }
     }
 
     private bool IsAtCapacity()

@@ -79,6 +79,10 @@ MonoBehaviour:
   _type: 0
   _capacity: 1
   _placedMovableLocator: {fileID: 985745801}
+  _disappearWhenAtCapacity: 0
+  _showOtherObjectWhenAtCapacity: 0
+  _parentToDisappear: {fileID: 0}
+  _otherObjectToShow: {fileID: 0}
 --- !u!212 &1328242946963117417
 SpriteRenderer:
   m_ObjectHideFlags: 0

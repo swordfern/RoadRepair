@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 985745801, guid: 6cfdbba2f6a95194390438401e3dae93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 985745801, guid: 6cfdbba2f6a95194390438401e3dae93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 985745801, guid: 6cfdbba2f6a95194390438401e3dae93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1328242946963117416, guid: 6cfdbba2f6a95194390438401e3dae93,
         type: 3}
       propertyPath: m_Offset.y
@@ -51,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 1328242946963117422, guid: 6cfdbba2f6a95194390438401e3dae93,
         type: 3}
       propertyPath: m_Name
-      value: cone.target
+      value: cone.target Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1328242946963117423, guid: 6cfdbba2f6a95194390438401e3dae93,
         type: 3}
