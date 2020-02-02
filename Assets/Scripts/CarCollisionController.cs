@@ -26,9 +26,6 @@ public class CarCollisionController : MonoBehaviour
             return;
         }
 
-        //Play audio for picking up item
-        GameObject.Find("Main Camera").GetComponent<SoundManager>().pickUpSource.PlayOneShot(GameObject.Find("Main Camera").GetComponent<SoundManager>().collisionClip, 0.30f);
-
         var damage = damageApplier.DamageAmount;
         var carIsDetroyed = _carHealth.ApplyDamageAndTryDestroy(damage);
         if (carIsDetroyed)
@@ -39,5 +36,15 @@ public class CarCollisionController : MonoBehaviour
         {
             CarDamagedAction?.Invoke();
         }
+    }
+
+    public int GetHealth()
+    {
+        return _carHealth.GetHealth();
+    }
+
+    public int GetMaxHealth()
+    {
+        return _carHealth.GetMaxHealth();
     }
 }

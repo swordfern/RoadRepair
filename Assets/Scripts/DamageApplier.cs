@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DamageApplier : MonoBehaviour
+public class DamageApplier : MonoBehaviour, ITemporarilyDisableable
 {
     [SerializeField] private int _damageAmount;
     [SerializeField] private TargetObject _target;

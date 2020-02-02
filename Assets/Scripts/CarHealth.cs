@@ -26,4 +26,9 @@ public class CarHealth : MonoBehaviour
     {
         return _health;
     }
+
+    public int GetMaxHealth()
+    {
+        return _maxHealth;
+    }
 }

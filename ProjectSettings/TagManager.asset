@@ -7,6 +7,10 @@ TagManager:
   - ShowOnLevelEnd
   - ShowOnDamage
   - ShowOnMenuVisible
+  - ShowOnGameplay
+  - ShowOnSettingsMenu
+  - ShowOnMainMenu
+  - ShowOnAboutMenu
   layers:
   - Default
   - TransparentFX
