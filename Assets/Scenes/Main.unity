@@ -839,13 +839,13 @@ MonoBehaviour:
   collisionSource: {fileID: 0}
   personSource: {fileID: 0}
   musicSource: {fileID: 0}
-  carClip: {fileID: 0}
-  catClip: {fileID: 0}
-  pickUpClip: {fileID: 0}
-  putDownClip: {fileID: 0}
-  collisionClip: {fileID: 0}
-  personClip: {fileID: 0}
-  musicClip: {fileID: 0}
+  carClip: {fileID: 8300000, guid: 709d5a43e4f58b7458df56290f6d3fbf, type: 3}
+  catClip: {fileID: 8300000, guid: f828a3e7dc4e0094990727b0505dc1f5, type: 3}
+  pickUpClip: {fileID: 8300000, guid: d4db9d7f149bd9742a2569b892abdc8f, type: 3}
+  putDownClip: {fileID: 8300000, guid: f6f156c14179403439ca0a43708c27df, type: 3}
+  collisionClip: {fileID: 8300000, guid: c7f76f035d51de04a90dac6096ba6b8e, type: 3}
+  personClip: {fileID: 8300000, guid: fde735f6a51b898449af883b009490d8, type: 3}
+  musicClip: {fileID: 8300000, guid: 1f3451841f5d4c149855012443ddd21d, type: 3}
 --- !u!1001 &1141119668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1943,7 +1943,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1083239308673376251, guid: 65fb020401475b94394c7d1f580c7544, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65fb020401475b94394c7d1f580c7544, type: 3}
 --- !u!1001 &9117416882930530015
 PrefabInstance:
