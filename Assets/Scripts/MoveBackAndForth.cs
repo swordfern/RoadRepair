@@ -41,5 +41,7 @@ public class MoveBackAndForth : MonoBehaviour
         _startX = newStart;
         _targetX = newTarget;
         _elapsedTime = 0;
+        var prevScale = _cachedTransform.localScale;
+        _cachedTransform.localScale = new Vector3(-1 * prevScale.x, prevScale.y, prevScale.z);
     }
 }
