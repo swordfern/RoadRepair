@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private CarCollisionController carCollisionController;
-    [SerializeField] private MenuButtonController[] menuButtonControllers;
+    [SerializeField] private SoundManager soundManager;
 
     private GameObject[] mainMenuObjects;
     private GameObject[] damageNotificationObjects;
@@ -15,16 +15,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0;
-
         carCollisionController.CarDestroyedAction += CarCollisionController_CarDestroyed;
         carCollisionController.CarDamagedAction += CarCollisionController_CarDamaged;
         carCollisionController.ReachedEndOfLevelAction += CarCollisionController_ReachedEndOfLevel;
-
-        foreach(MenuButtonController mbc in menuButtonControllers)
-        {
-            mbc.StartGameAction += MenuButtonController_StartGame;
-        }
 
         mainMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnMenuVisible");
         damageNotificationObjects = GameObject.FindGameObjectsWithTag("ShowOnDamage");
@@ -40,12 +33,6 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
-    }
-
-    public void MenuButtonController_StartGame()
-    {
-        Debug.Log("start button was clicked");
-        HideLevelMenu();
     }
 
     public void CarCollisionController_CarDestroyed()
@@ -65,16 +52,44 @@ public class GameController : MonoBehaviour
         ShowLevelEndObjects();
     }
 
+    public void OnStartButtonClick()
+    {
+        HideLevelMenu();
+        //display countdown graphic?
+
+        soundManager.BeginLevelMusic();
+
+        Time.timeScale = 1.0f;
+    }
+
+    public void OnSettingsButtonClick()
+    {
+    }
+
+    public void OnAboutButtonClick()
+    {
+
+    }
+
+    public void OnExitButtonClick()
+    {
+        Application.Quit();
+    }
+
     private void DisplayLevelMenu()
     {
+        int count = 0;
+        foreach (GameObject g in mainMenuObjects)
+        {
+            g.SetActive(true);
+        }
         Time.timeScale = 0;
     }
 
     private void HideLevelMenu()
     {
-        foreach(GameObject g in mainMenuObjects)
+        foreach (GameObject g in mainMenuObjects)
         {
-            Debug.Log("hiding menu objects");
             g.SetActive(false);
         }
     }

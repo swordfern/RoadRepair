@@ -42,7 +42,10 @@ public class SoundManager : MonoBehaviour
         putDownSource.clip = putDownClip;
         collisionSource.clip = collisionClip;
         musicSource.clip = musicClip;
+    }
 
+    public void BeginLevelMusic()
+    {
         musicSource.volume = 0.25f;
         musicSource.loop = true;
         musicSource.Play();
