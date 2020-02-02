@@ -6,28 +6,46 @@ using UnityEngine.EventSystems;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private CarCollisionController carCollisionController;
+    [SerializeField] private MenuButtonController[] menuButtonControllers;
 
+    private GameObject[] mainMenuObjects;
     private GameObject[] damageNotificationObjects;
     private GameObject[] levelEndObjects;
 
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 0;
+
         carCollisionController.CarDestroyedAction += CarCollisionController_CarDestroyed;
         carCollisionController.CarDamagedAction += CarCollisionController_CarDamaged;
         carCollisionController.ReachedEndOfLevelAction += CarCollisionController_ReachedEndOfLevel;
 
+        foreach(MenuButtonController mbc in menuButtonControllers)
+        {
+            mbc.StartGameAction += MenuButtonController_StartGame;
+        }
+
+        mainMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnMenuVisible");
         damageNotificationObjects = GameObject.FindGameObjectsWithTag("ShowOnDamage");
         levelEndObjects = GameObject.FindGameObjectsWithTag("ShowOnLevelEnd");
 
         HideDamageNotificationObjects();
         HideLevelEndObjects();
+
+        DisplayLevelMenu();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void MenuButtonController_StartGame()
+    {
+        Debug.Log("start button was clicked");
+        HideLevelMenu();
     }
 
     public void CarCollisionController_CarDestroyed()
