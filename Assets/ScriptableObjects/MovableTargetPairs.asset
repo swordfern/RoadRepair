@@ -15,3 +15,7 @@ MonoBehaviour:
   _pairs:
   - Movable: 0
     Target: 0
+  - Movable: 1
+    Target: 1
+  - Movable: 2
+    Target: 2
