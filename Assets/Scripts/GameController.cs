@@ -10,7 +10,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private CarMovementBehaviour carMovementBehaviour;
     [SerializeField] private HUDController hudController;
 
+    private GameObject[] menuSharedObjects;
     private GameObject[] mainMenuObjects;
+    private GameObject[] settingsMenuObjects;
+    private GameObject[] aboutMenuObjects;
     private GameObject[] damageNotificationObjects;
     private GameObject[] levelEndObjects;
     private GameObject[] gameplayObjects;
@@ -22,16 +25,22 @@ public class GameController : MonoBehaviour
         carCollisionController.CarDamagedAction += CarCollisionController_CarDamaged;
         carCollisionController.ReachedEndOfLevelAction += CarCollisionController_ReachedEndOfLevel;
 
-        mainMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnMenuVisible");
-        damageNotificationObjects = GameObject.FindGameObjectsWithTag("ShowOnDamage");
+        menuSharedObjects = GameObject.FindGameObjectsWithTag("ShowOnMenuVisible");
+        mainMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnMainMenu");
+        settingsMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnSettingsMenu");
+        aboutMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnAboutMenu");
+        
         levelEndObjects = GameObject.FindGameObjectsWithTag("ShowOnLevelEnd");
+
         gameplayObjects = GameObject.FindGameObjectsWithTag("ShowOnGameplay");
 
-        HideDamageNotificationObjects();
         HideLevelEndObjects();
         HideGameplayObjects();
 
-        DisplayLevelMenu();
+        HideAboutMenuObjects();
+        HideSettingsMenuObjects();
+
+        DisplayGameMenu();
     }
 
     // Update is called once per frame
@@ -61,7 +70,7 @@ public class GameController : MonoBehaviour
 
     public void OnStartButtonClick()
     {
-        HideLevelMenu();
+        HideGameMenu();
         ShowGameplayObjects();
         hudController.CreateHealthSlider(carCollisionController.GetMaxHealth());
         carMovementBehaviour.SetGameStarted();
@@ -71,13 +80,31 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
+    public void OnBackToMainMenuClick(int menu)
+    {
+        if(menu == 1)
+        {
+            // came from settings menu
+            HideSettingsMenuObjects();
+        }else if(menu == 2)
+        {
+            // came from about menu
+            HideAboutMenuObjects();
+        }
+
+        ShowMainMenuObjects();
+    }
+
     public void OnSettingsButtonClick()
     {
+        HideMainMenuObjects();
+        ShowSettingsMenuObjects();
     }
 
     public void OnAboutButtonClick()
     {
-
+        HideMainMenuObjects();
+        ShowAboutMenuObjects();
     }
 
     public void OnExitButtonClick()
@@ -85,17 +112,47 @@ public class GameController : MonoBehaviour
         Application.Quit();
     }
 
-    private void DisplayLevelMenu()
+    private void DisplayGameMenu()
     {
-        int count = 0;
+        ShowSharedMenuObjects();
+        ShowMainMenuObjects();
+
+        Time.timeScale = 0;
+    }
+
+    private void HideGameMenu()
+    {
+        HideSharedMenuObjects();
+        HideMainMenuObjects();
+        HideAboutMenuObjects();
+        HideSettingsMenuObjects();
+    }
+
+    private void ShowSharedMenuObjects()
+    {
+        foreach (GameObject g in menuSharedObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    private void HideSharedMenuObjects()
+    {
+        foreach (GameObject g in menuSharedObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    private void ShowMainMenuObjects()
+    {
         foreach (GameObject g in mainMenuObjects)
         {
             g.SetActive(true);
         }
-        Time.timeScale = 0;
     }
 
-    private void HideLevelMenu()
+    private void HideMainMenuObjects()
     {
         foreach (GameObject g in mainMenuObjects)
         {
@@ -103,9 +160,33 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void HideDamageNotificationObjects()
+    private void ShowSettingsMenuObjects()
     {
-        foreach (GameObject g in damageNotificationObjects)
+        foreach (GameObject g in settingsMenuObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    private void HideSettingsMenuObjects()
+    {
+        foreach (GameObject g in settingsMenuObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    private void ShowAboutMenuObjects()
+    {
+        foreach (GameObject g in aboutMenuObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    private void HideAboutMenuObjects()
+    {
+        foreach (GameObject g in aboutMenuObjects)
         {
             g.SetActive(false);
         }
