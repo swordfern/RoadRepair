@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private CarCollisionController carCollisionController;
-    [SerializeField] private Slider healthBarSlider;
-    [SerializeField] private Fill healthBarFill;
+    [SerializeField] private HUDController hudController;
 
     private GameObject[] mainMenuObjects;
     private GameObject[] damageNotificationObjects;
@@ -47,8 +46,9 @@ public class GameController : MonoBehaviour
 
     public void CarCollisionController_CarDamaged()
     {
-        updateHealthSlider(carCollisionController.GetHealth(), carCollisionController.GetMaxHealth());
-        //ShowDamageNotificationObjects();
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().pickUpSource.PlayOneShot(GameObject.Find("Main Camera").GetComponent<SoundManager>().collisionClip, 0.30f);
+
+        hudController.UpdateHealthSlider(carCollisionController.GetHealth(), carCollisionController.GetMaxHealth());
     }
 
     public void CarCollisionController_ReachedEndOfLevel()
@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
     {
         HideLevelMenu();
         ShowGameplayObjects();
-        //display countdown graphic?
+        hudController.CreateHealthSlider(carCollisionController.GetMaxHealth());
 
         GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginLevelMusic();
 
@@ -81,12 +81,6 @@ public class GameController : MonoBehaviour
     public void OnExitButtonClick()
     {
         Application.Quit();
-    }
-
-    private void updateHealthSlider(int currHealth, int maxHealth)
-    {
-        int x = (int)100 * currHealth / maxHealth;
-        healthBarSlider.value = (int)100 * currHealth / maxHealth;
     }
 
     private void DisplayLevelMenu()
