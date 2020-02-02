@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private CarCollisionController carCollisionController;
-    [SerializeField] private SoundManager soundManager;
+
 
     private GameObject[] mainMenuObjects;
     private GameObject[] damageNotificationObjects;
@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
         HideLevelMenu();
         //display countdown graphic?
 
-        soundManager.BeginLevelMusic();
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginLevelMusic();
 
         Time.timeScale = 1.0f;
     }
