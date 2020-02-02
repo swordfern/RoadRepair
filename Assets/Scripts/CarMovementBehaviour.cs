@@ -10,6 +10,7 @@ public class CarMovementBehaviour : MonoBehaviour
 
     private Transform _cachedTransform;
     private float _elapsedTime;
+    private bool _gameStarted;
 
     private void Awake()
     {
@@ -18,6 +19,11 @@ public class CarMovementBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if (!_gameStarted)
+        {
+            return;
+        }
+
         var prevPos = _cachedTransform.localPosition;
 
         var delta = Time.deltaTime;
@@ -32,5 +38,10 @@ public class CarMovementBehaviour : MonoBehaviour
     {       
         // Psuedo-random wave that starts slow and gets faster
         return _amplitude * Mathf.Sin(_frequency * Mathf.Sin(_spread* Mathf.Sin(_elapsedTime) * _elapsedTime) *_elapsedTime);
+    }
+
+    public void SetGameStarted()
+    {
+        _gameStarted = true;
     }
 }
