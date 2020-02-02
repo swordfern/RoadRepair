@@ -18,11 +18,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip collisionClip;
     public AudioClip musicClip;
 
-
+    //creates static SoundManager for singleton
     public static SoundManager MasterSoundManager;
 
     void Start()
     {
+        //checks to see if the singleton exists
         if (MasterSoundManager == null)
         {
             MasterSoundManager = this;
@@ -46,10 +47,8 @@ public class SoundManager : MonoBehaviour
         musicSource.loop = true;
         musicSource.Play();
 
-        /*
-        carSource.volume = 0.5f;
+        carSource.volume = 0.20f;
         carSource.loop = true;
-        carSource.Play();*/
-
+        carSource.Play();
     }
 }

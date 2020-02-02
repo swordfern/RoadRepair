@@ -26,6 +26,9 @@ public class CarCollisionController : MonoBehaviour
             return;
         }
 
+        //Play audio for picking up item
+        SoundManager.MasterSoundManager.collisionSource.PlayOneShot(SoundManager.MasterSoundManager.collisionClip, 0.30f);
+
         var damage = damageApplier.DamageAmount;
         var carIsDetroyed = _carHealth.ApplyDamageAndTryDestroy(damage);
         if (carIsDetroyed)

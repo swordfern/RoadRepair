@@ -45,7 +45,7 @@ public class MovableMover : MonoBehaviour
         _dropTimer = _timeToDrop;
 
         //Play audio for picking up item
-        SoundManager.MasterSoundManager.pickUpSource.PlayOneShot(SoundManager.MasterSoundManager.pickUpClip);
+        SoundManager.MasterSoundManager.pickUpSource.PlayOneShot(SoundManager.MasterSoundManager.pickUpClip, 0.5f);
     }
 
     public void PlaceMovable(TargetObject targetObject)
@@ -62,6 +62,9 @@ public class MovableMover : MonoBehaviour
             {
                 _heldItem.Place();
                 _heldItem = null;
+
+                //Play audio for putting down item
+                SoundManager.MasterSoundManager.putDownSource.PlayOneShot(SoundManager.MasterSoundManager.putDownClip, 0.5f);
             }
         }
     }
