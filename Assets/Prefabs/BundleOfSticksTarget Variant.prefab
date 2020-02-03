@@ -489,6 +489,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.12
       objectReference: {fileID: 0}
+    - target: {fileID: 1328242946963117416, guid: 6cfdbba2f6a95194390438401e3dae93,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328242946963117416, guid: 6cfdbba2f6a95194390438401e3dae93,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328242946963117416, guid: 6cfdbba2f6a95194390438401e3dae93,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328242946963117416, guid: 6cfdbba2f6a95194390438401e3dae93,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1328242946963117418, guid: 6cfdbba2f6a95194390438401e3dae93,
         type: 3}
       propertyPath: _parentsForPlacedMovables.Array.size
