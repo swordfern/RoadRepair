@@ -122,6 +122,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: worker.move.dmg Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3652991500372880407, guid: 772932dfec3b6094aa917b38a599c47f,
         type: 3}
       propertyPath: m_LocalPosition.x
