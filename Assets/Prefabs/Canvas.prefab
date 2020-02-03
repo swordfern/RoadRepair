@@ -150,6 +150,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 51720124291218222}
     m_Modifications:
+    - target: {fileID: 879238313833702848, guid: aa57c3f9d4a3b764996e4e39ba4abad9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 879238313833702848, guid: aa57c3f9d4a3b764996e4e39ba4abad9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 879238313833702848, guid: aa57c3f9d4a3b764996e4e39ba4abad9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 879238313833702855, guid: aa57c3f9d4a3b764996e4e39ba4abad9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -285,6 +300,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 51720124291218222}
     m_Modifications:
+    - target: {fileID: 522739656516212147, guid: 0c7ee29c5078c3949aee7e6e0aa8a28e,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 522739656516212147, guid: 0c7ee29c5078c3949aee7e6e0aa8a28e,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Made for Global Jam Jam 2020 by:
+
+
+        Cory Jones (Art, Game Design)
+
+        Maxwell
+        Sandler (Music)
+
+        Jackie Chen (Art)
+
+        Nicky Breshon (Lead Programmer)
+
+        Diane
+        Panagiotopoulos (Programmer, Project Manager)'
+      objectReference: {fileID: 0}
     - target: {fileID: 522739657778003794, guid: 0c7ee29c5078c3949aee7e6e0aa8a28e,
         type: 3}
       propertyPath: m_Name
@@ -395,6 +433,31 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 522739657778003796, guid: 0c7ee29c5078c3949aee7e6e0aa8a28e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 522739657778003796, guid: 0c7ee29c5078c3949aee7e6e0aa8a28e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 522739657778003796, guid: 0c7ee29c5078c3949aee7e6e0aa8a28e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 522739657778003796, guid: 0c7ee29c5078c3949aee7e6e0aa8a28e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 522739657778003796, guid: 0c7ee29c5078c3949aee7e6e0aa8a28e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c7ee29c5078c3949aee7e6e0aa8a28e, type: 3}
 --- !u!224 &3849092705434139635 stripped
@@ -900,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 8697793667445010379, guid: 2174d5784fcd8094aafb694b98d66d13,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697793667445010379, guid: 2174d5784fcd8094aafb694b98d66d13,
         type: 3}
