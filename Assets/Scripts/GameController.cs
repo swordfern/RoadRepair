@@ -64,10 +64,14 @@ public class GameController : MonoBehaviour
 
     public void CarCollisionController_CarDestroyed()
     {
+        Time.timeScale = 0;
+
         // play car destruction music
         SoundManager.pickUpSource.PlayOneShot(SoundManager.destroyClip, 0.30f);
+        SoundManager.StopLevelMusic();
 
         // display game over menu
+        ShowSharedMenuObjects();
         ShowGameOverObjects();
     }
 
