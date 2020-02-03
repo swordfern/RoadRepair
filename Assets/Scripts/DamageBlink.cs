@@ -13,7 +13,7 @@ public class DamageBlink : MonoBehaviour
         _collisionController.CarDamagedAction += HandleCarDamaged;
     }
 
-    private void HandleCarDamaged()
+    private void HandleCarDamaged(DamageApplier damageApplier)
     {
         StartCoroutine(BlinkCoroutine());
     }
