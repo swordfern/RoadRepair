@@ -23,3 +23,5 @@ MonoBehaviour:
     Target: 3
   - Movable: 4
     Target: 4
+  - Movable: 5
+    Target: 5

@@ -11,7 +11,8 @@ public class MovableTargetPairs : ScriptableObject
         Cone,
         PotholeFiller,
         Cat,
-        ConstructionWorker
+        ConstructionWorker,
+        Branch
     }
 
     public enum TargetType
@@ -20,7 +21,8 @@ public class MovableTargetPairs : ScriptableObject
         ConeTarget,
         Pothole,
         CatKennel,
-        YeildSign
+        YeildSign,
+        BundleOfSticks
     }
 
     [Serializable]

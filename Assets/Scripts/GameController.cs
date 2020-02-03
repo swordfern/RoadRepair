@@ -14,7 +14,8 @@ public class GameController : MonoBehaviour
     private GameObject[] mainMenuObjects;
     private GameObject[] settingsMenuObjects;
     private GameObject[] aboutMenuObjects;
-    private GameObject[] damageNotificationObjects;
+    private GameObject[] gameOverMenuObjects;
+
     private GameObject[] levelEndObjects;
     private GameObject[] gameplayObjects;
 
@@ -29,6 +30,7 @@ public class GameController : MonoBehaviour
         mainMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnMainMenu");
         settingsMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnSettingsMenu");
         aboutMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnAboutMenu");
+        gameOverMenuObjects = GameObject.FindGameObjectsWithTag("ShowOnGameOverMenu");
         
         levelEndObjects = GameObject.FindGameObjectsWithTag("ShowOnLevelEnd");
 
@@ -39,6 +41,7 @@ public class GameController : MonoBehaviour
 
         HideAboutMenuObjects();
         HideSettingsMenuObjects();
+        HideGameOverObjects();
 
         DisplayGameMenu();
     }
@@ -51,7 +54,11 @@ public class GameController : MonoBehaviour
 
     public void CarCollisionController_CarDestroyed()
     {
-        Debug.Log("Car is destroyed");
+        // play car destruction music
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().pickUpSource.PlayOneShot(GameObject.Find("Main Camera").GetComponent<SoundManager>().destroyClip, 0.30f);
+
+        // display game over menu
+        ShowGameOverObjects();
     }
 
     public void CarCollisionController_CarDamaged()
@@ -75,9 +82,16 @@ public class GameController : MonoBehaviour
         hudController.CreateHealthSlider(carCollisionController.GetMaxHealth());
         carMovementBehaviour.SetGameStarted();
 
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().StopMenuMusic();
         GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginLevelMusic();
 
         Time.timeScale = 1.0f;
+    }
+
+    public void OnRestartButtonClick()
+    {
+        HideGameOverObjects();
+        DisplayGameMenu();
     }
 
     public void OnBackToMainMenuClick(int menu)
@@ -116,6 +130,8 @@ public class GameController : MonoBehaviour
     {
         ShowSharedMenuObjects();
         ShowMainMenuObjects();
+
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginMenuMusic();
 
         Time.timeScale = 0;
     }
@@ -219,6 +235,22 @@ public class GameController : MonoBehaviour
     private void HideGameplayObjects()
     {
         foreach (GameObject g in gameplayObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    private void ShowGameOverObjects()
+    {
+        foreach (GameObject g in gameOverMenuObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    private void HideGameOverObjects()
+    {
+        foreach (GameObject g in gameOverMenuObjects)
         {
             g.SetActive(false);
         }
