@@ -136,7 +136,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b6e0be60aac0dd647a6c000e54b07b90, type: 3}
+  m_Texture: {fileID: 2800000, guid: bda4989f704de99468a6d5730549e3a2, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -737,6 +737,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616251235322272946, guid: 3bb6dfc325753fb41882e7450f550faa,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616251235322272946, guid: 3bb6dfc325753fb41882e7450f550faa,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7616251234440001327, guid: 3bb6dfc325753fb41882e7450f550faa, type: 3}
