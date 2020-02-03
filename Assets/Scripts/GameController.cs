@@ -19,6 +19,19 @@ public class GameController : MonoBehaviour
     private GameObject[] levelEndObjects;
     private GameObject[] gameplayObjects;
 
+    private SoundManager _soundManager;
+    private SoundManager SoundManager
+    {
+        get
+        {
+            if (_soundManager == null)
+            {
+                _soundManager = Camera.main.GetComponent<SoundManager>();
+            }
+            return _soundManager;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,9 +75,13 @@ public class GameController : MonoBehaviour
         ShowGameOverObjects();
     }
 
-    public void CarCollisionController_CarDamaged()
+    public void CarCollisionController_CarDamaged(DamageApplier damageApplier)
     {
-        GameObject.Find("Main Camera").GetComponent<SoundManager>().pickUpSource.PlayOneShot(GameObject.Find("Main Camera").GetComponent<SoundManager>().collisionClip, 0.30f);
+        var clip = damageApplier.CustomAudioClip == null
+            ? SoundManager.collisionClip
+            : damageApplier.CustomAudioClip;
+
+        SoundManager.pickUpSource.PlayOneShot(clip, 0.30f);
 
         hudController.UpdateHealthSlider(carCollisionController.GetHealth(), carCollisionController.GetMaxHealth());
     }
@@ -83,7 +100,7 @@ public class GameController : MonoBehaviour
         hudController.CreateHealthSlider(carCollisionController.GetMaxHealth());
         carMovementBehaviour.SetGameStarted();
 
-        GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginLevelMusic();
+        SoundManager.BeginLevelMusic();
 
         Time.timeScale = 1.0f;
     }

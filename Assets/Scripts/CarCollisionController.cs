@@ -7,7 +7,7 @@ public class CarCollisionController : MonoBehaviour
     [SerializeField] private CarHealth _carHealth;
 
     public event Action CarDestroyedAction;
-    public event Action CarDamagedAction;
+    public event Action<DamageApplier> CarDamagedAction;
     public event Action ReachedEndOfLevelAction;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,7 +34,7 @@ public class CarCollisionController : MonoBehaviour
         }
         else
         {
-            CarDamagedAction?.Invoke();
+            CarDamagedAction?.Invoke(damageApplier);
         }
     }
 
