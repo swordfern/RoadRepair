@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
         collisionSource.clip = collisionClip;
         destroySource.clip = destroyClip;
         musicSource.clip = musicClip;
-        menuMusicSource.clip = musicClip;
+        menuMusicSource.clip = menuMusicClip;
     }
 
     public void BeginLevelMusic()
@@ -64,5 +64,23 @@ public class SoundManager : MonoBehaviour
         carSource.volume = 0.20f;
         carSource.loop = true;
         carSource.Play();
+    }
+
+    public void StopLevelMusic()
+    {
+        musicSource.Stop();
+        carSource.Stop();
+    }
+
+    public void BeginMenuMusic()
+    {
+        menuMusicSource.volume = 0.25f;
+        menuMusicSource.loop = true;
+        menuMusicSource.Play();
+    }
+
+    public void StopMenuMusic()
+    {
+        menuMusicSource.Stop();
     }
 }

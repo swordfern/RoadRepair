@@ -1,8 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -54,6 +51,7 @@ public class GameController : MonoBehaviour
 
         HideAboutMenuObjects();
         HideSettingsMenuObjects();
+        HideGameOverObjects();
 
         DisplayGameMenu();
     }
@@ -67,9 +65,7 @@ public class GameController : MonoBehaviour
     public void CarCollisionController_CarDestroyed()
     {
         // play car destruction music
-
-        // fade to black
-        
+        SoundManager.pickUpSource.PlayOneShot(SoundManager.destroyClip, 0.30f);
 
         // display game over menu
         ShowGameOverObjects();
@@ -100,6 +96,7 @@ public class GameController : MonoBehaviour
         hudController.CreateHealthSlider(carCollisionController.GetMaxHealth());
         carMovementBehaviour.SetGameStarted();
 
+        SoundManager.StopMenuMusic();
         SoundManager.BeginLevelMusic();
 
         Time.timeScale = 1.0f;
@@ -147,6 +144,8 @@ public class GameController : MonoBehaviour
     {
         ShowSharedMenuObjects();
         ShowMainMenuObjects();
+
+        SoundManager.BeginMenuMusic();
 
         Time.timeScale = 0;
     }
