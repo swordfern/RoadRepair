@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour
 
         HideAboutMenuObjects();
         HideSettingsMenuObjects();
+        HideGameOverObjects();
 
         DisplayGameMenu();
     }
@@ -54,9 +55,7 @@ public class GameController : MonoBehaviour
     public void CarCollisionController_CarDestroyed()
     {
         // play car destruction music
-
-        // fade to black
-        
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().pickUpSource.PlayOneShot(GameObject.Find("Main Camera").GetComponent<SoundManager>().destroyClip, 0.30f);
 
         // display game over menu
         ShowGameOverObjects();
@@ -83,6 +82,7 @@ public class GameController : MonoBehaviour
         hudController.CreateHealthSlider(carCollisionController.GetMaxHealth());
         carMovementBehaviour.SetGameStarted();
 
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().StopMenuMusic();
         GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginLevelMusic();
 
         Time.timeScale = 1.0f;
@@ -130,6 +130,8 @@ public class GameController : MonoBehaviour
     {
         ShowSharedMenuObjects();
         ShowMainMenuObjects();
+
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().BeginMenuMusic();
 
         Time.timeScale = 0;
     }
