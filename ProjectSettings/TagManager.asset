@@ -11,6 +11,7 @@ TagManager:
   - ShowOnSettingsMenu
   - ShowOnMainMenu
   - ShowOnAboutMenu
+  - ShowOnGameOverMenu
   layers:
   - Default
   - TransparentFX
