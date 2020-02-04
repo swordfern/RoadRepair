@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -108,8 +109,7 @@ public class GameController : MonoBehaviour
 
     public void OnRestartButtonClick()
     {
-        HideGameOverObjects();
-        DisplayGameMenu();
+        SceneManager.LoadScene("Main");
     }
 
     public void OnBackToMainMenuClick(int menu)
