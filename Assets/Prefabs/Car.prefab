@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ff1624eef526d4ab78005e5a930897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _yVelocity: -1.35
+  _yVelocity: -1.25
   _amplitude: 1.2
   _frequency: 0.03
   _spread: 0.03
