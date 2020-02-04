@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
         type: 3}
       propertyPath: m_UsedByComposite
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3652991500372880406, guid: 772932dfec3b6094aa917b38a599c47f,
         type: 3}
